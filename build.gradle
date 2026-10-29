@@ -155,6 +155,16 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-actuator'
   implementation 'org.springframework.boot:spring-boot-starter-json'
+
+  // Persistence layer: JPA and Hibernate integration.
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+   // Bean Validation: validate incoming task requests.
+  implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+  // PostgreSQL JDBC driver.
+  runtimeOnly 'org.postgresql:postgresql'
+
   implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:3.1.1'
 
   implementation 'com.github.hmcts.java-logging:logging:6.1.9'

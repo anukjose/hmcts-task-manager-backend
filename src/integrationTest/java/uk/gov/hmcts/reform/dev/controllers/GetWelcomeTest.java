@@ -1,3 +1,4 @@
+
 package uk.gov.hmcts.reform.dev.controllers;
 
 import org.junit.jupiter.api.DisplayName;
@@ -11,7 +12,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest
+@WebMvcTest(RootController.class)
 class GetWelcomeTest {
 
     @Autowired
@@ -20,8 +21,11 @@ class GetWelcomeTest {
     @DisplayName("Should welcome upon root request with 200 response code")
     @Test
     void welcomeRootEndpoint() throws Exception {
-        MvcResult response = mockMvc.perform(get("/")).andExpect(status().isOk()).andReturn();
+        MvcResult response = mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andReturn();
 
-        assertThat(response.getResponse().getContentAsString()).startsWith("Welcome");
+        assertThat(response.getResponse().getContentAsString())
+                .startsWith("Welcome");
     }
 }

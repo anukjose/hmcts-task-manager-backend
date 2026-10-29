@@ -1,25 +1,48 @@
-.gradle
-/build/
+# Gradle
+.gradle/
+build/
 !gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# Java compiled files
 *.class
-bin/main/application.yaml
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
+# Logs
+*.log
 
-### IntelliJ IDEA ###
-.idea
-/out
-*.iws
+# Environment variables and secrets
+#.env
+#.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE settings
+.idea/
 *.iml
-*.ipr
+.project
+.classpath
+.settings/
+.factorypath
 
+# Eclipse metadata
+.metadata/
+
+# macOS
 .DS_Store
 
-applicationinsights-agent-*.jar
-*.log
+# Temporary files
+*.tmp
+*.swp
+*.bak
+
+# Test and coverage reports
+**/build/reports/
+**/build/test-results/
+**/build/jacoco/
+
+# Eclipse generated output
+bin/
+
+# Local Checkstyle configuration
+.checkstyle
