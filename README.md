@@ -1,9 +1,11 @@
-# HMCTS Task Manager Backend
+# HMCTS Task Management System: Backend
 
 ## Overview
 
-This project is the backend for a task management application developed as part of the HMCTS Developer Technical Test.
+HMCTS requires a task management system that enables caseworkers to keep track of their tasks and manage them efficiently.
+The system supports task prioritisation through due dates, task status tracking, and input validation to help caseworkers organise and manage their workload effectively.
 
+This project is the backend for a task management application developed as part of the HMCTS Developer Technical Test.
 It provides REST API endpoints to create, view, update, and delete tasks. Tasks are stored in a PostgreSQL database.
 
 ## Features
@@ -56,14 +58,14 @@ Request body:
 
 ```json
 {
-  "title": "Complete technical test",
-  "description": "Finish the task manager implementation",
+  "title": "Review case documents",
+  "description": "Review submitted evidence and verify that all required documents are available before the case hearing.",
   "status": "TODO",
   "dueDateTime": "2026-11-05T14:30:00"
 }
 ```
 
-Returns `201 Created` with the created task and its location.
+ReturnsReturns `201 Created` with the details of the newly created task, including its generated ID.
 
 ### 2. Retrieve All Tasks
 
@@ -79,16 +81,18 @@ Returns `200 OK` if the task exists, or `404 Not Found` if it does not.
 
 ### 4. Update a Task
 
-`PUT /api/tasks/1`
+`PUT /api/tasks/{id}`
+
+example : /api/tasks/1
 
 Request body:
 
 ```json
 {
-  "title": "Complete technical test",
-  "description": "Review and test the application",
+  "title": "Review case documents",
+  "description": "Review submitted evidence and verify that all required documents are available before the case hearing.",
   "status": "IN_PROGRESS",
-  "dueDateTime": "2026-11-06T16:00:00"
+  "dueDateTime": "2026-11-05T14:30:00"
 }
 ```
 
